@@ -1,0 +1,11 @@
+name: in-context-learning-in-multi-agent-interdependent-decision-making
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - -r requirements.txt
+
