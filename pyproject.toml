@@ -1,0 +1,85 @@
+[project]
+name = "In-Context-Learning-in-Multi-Agent-Interdependent-Decision-Making"
+version = "0.1.0"
+description = "[EMNLP 2026] Recursive Reasoning or Statistical Extrapolation? In-Context Learning in Multi-Agent Interdependent Decision-Making"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # ===== Base =====
+    ## utils
+    "notebook",
+    "ipywidgets",
+    ## log
+    "loguru",
+    ## path
+    "pathlib",
+    "omegaconf",
+    "python-dotenv",
+    ## cli
+    "typer",
+    
+    # ===== Main =====
+    ## langchain & langgraph
+    "langchain", "langgraph",
+    ### langchain community
+    "langchain-community",  # community LLMs, embedding models, tools
+    "langchain-openai",  # openai client. ChatOpenAI
+    "langchain-google-genai",
+    "langchain_anthropic",
+    "dashscope",
+    "langchain-deepseek",
+    "langchain-huggingface",  # huggingface endpoint
+    "langchain-ollama",
+    "langgraph-checkpoint-sqlite",
+    # data processing, analysis, modeling
+    "pandas", "pandas-stubs",
+    "jsonlines", "orjson", "openpyxl",
+    "json-repair",  # outputs
+]
+
+
+[dependency-groups]
+# Development
+dev = [
+    # ===== Linting and Formatting =====
+    "ruff",
+    # "mypy",
+    # "pyright",
+    # ===== Debugging and Dev Productivity =====
+    # "ipython",
+    # "pre-commit",
+]
+# Tests
+test = [
+    # pytest
+    "pytest",
+    "pytest-asyncio",  # if only asyncio, not anyio
+]
+# Documents
+docs = [
+    # Sphinx
+    # "sphinx",
+    # "sphinx-rtd-theme",
+    # "myst-parser",
+    # MkDocs
+    # "mkdocs",
+    # "mkdocs-material",
+    # "mkdocstrings",
+]
+
+
+[tool.uv]
+default-groups = ["dev", "test", ]
+
+
+[tool.ruff]
+select = ["E", "F", ]
+ignore = [
+    "F401",
+]
+format.quote-style = "preserve"
+
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
