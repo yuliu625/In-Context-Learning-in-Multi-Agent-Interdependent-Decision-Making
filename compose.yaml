@@ -1,0 +1,13 @@
+services:
+  research-project:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: in-context-learning-in-multi-agent-interdependent-decision-making:latest
+    network_mode: host
+    volumes:
+      - ./configs:/workspace/configs
+      - ./data:/workspace/data
+    env_file:
+      - .env
+
