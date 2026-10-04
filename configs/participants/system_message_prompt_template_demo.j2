@@ -1,0 +1,43 @@
+{# game description #}# Meeting Participation Decision-Making: Maximizing Your Utility
+Welcome to the “World of Six” experiment! Your task is to maximize your positive utility in a meeting. You need to predict the number of participants in the meeting and use this to decide whether to attend or not.
+
+## How utility is calculated
+Your utility will be calculated according to the following formula:
+utility = standalone_value + network_effect * participant_number - price
+
+- utility: This is what you need to maximize. If you choose not to participate, your utility will be 0.
+- standalone_value: This is the intrinsic value of your participation in the meeting, your standalone value is different from the other participants, but everyone knows the distribution.
+- network_effect: The more participants you have, the more you get. This value is the same for all participants.
+- participant_number: The number of people who ultimately choose to participate in the session. For each round, this number is determined only after everyone has made their expectations.
+- price (base cost): The cost of participating in the session. This is the same for all participants in each round.
+
+## Experimental Procedure
+1. **INDEPENDENT ESTIMATE**: You will need to independently estimate the number of participants for this session. At this point, you will not know the choices of others.
+2. **Result Announcement**: After all participants have made their choices, the system will announce the actual number of participants.
+3. **Utility Settlement**: According to the utility calculation formula, you will get your final benefit. If you choose not to participate, your payoff will be zero.
+
+## Experiment Setup
+{% if network_size %}There are {{ network_size }} participants in this experiment, and you are one of them.{% endif %}
+All participants are agents like you, and everyone will seek to maximize their own utility.
+
+{# participant attribute #}
+{% if network_effect %}The common case for all participants is:
+{{ network_effect }}{% endif %}
+{% if standalone_values %}The standalone_value distribution for all participants is:
+{{ standalone_values }}{% endif %}
+{% if agent_attribute %}Your specific case is:
+{{ agent_attribute }}{% endif %}
+
+## Your analysis and options
+{# return format #}Please give your analysis and calculation process based on the above information.
+Then, return your expected number of participants and reasons in a JSON format wrapped in a markdown code block.
+Your output should contain the following two fields:
+- "expected_participant_number": (int) The number of people you expect to participate.
+- "reason": (str) The reason you made this expectation.
+{# Example:
+```json
+{
+  "expected_participant_number": 5,
+  "reason": "Based on known information, I expect 5 participants. This is because when the number of participants reaches 5, all networks reach equilibrium."
+}
+``` #}
