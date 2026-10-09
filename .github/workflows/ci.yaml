@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-calculations:
-    name: Test core calculations
+  test-core:
+    name: Test Core Math and Game Theory Calculations
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,6 +18,36 @@ jobs:
           enable-cache: true
       - name: Install the project
         run: uv sync --locked
-      - name: Run tests
+      - name: Run calculation tests
         run: uv run pytest tests/unit/calculations
+
+  test-persistence:
+    name: Test Data Persistence and Experiment Configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+      - name: Install the project
+        run: uv sync --locked
+      - name: Run io and configurations tests
+        run: uv run pytest tests/unit/io tests/unit/configurations
+
+  test-offline:
+    name: Complete Offline Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+      - name: Install the project
+        run: uv sync --locked
+      - name: Run all offline tests
+        run: uv run pytest tests/unit/calculations tests/unit/prompts tests/unit/fsm tests/unit/io tests/unit/configurations
 
