@@ -1,0 +1,17 @@
+system_message_prompt_template:
+  - name: 'demo'
+    description: >
+      A Jinja2-based template used to dynamically populate the experimental scenario and parameterized settings, and to render the system prompt.
+      It guides the LLM to follow instructions and generate structured output.
+      It must be instantiated through the Jinja2 loading and rendering pipeline provided by this project.
+      This pipeline filters out template comments and validates parameters against the existing schema.
+      When modifying the template, Jinja2 syntax must be used, and the variables must conform to the schema definitions.
+
+
+human_message_prompt_template:
+  - name: 'demo'
+    description: >
+      A Jinja2-based template representing ABM environment feedback.
+      It dynamically populates and renders the per-turn environment feedback parameters into a string, which is passed to the LLM as the human prompt.
+      When modifying the template, Jinja2 syntax must be used, and it must conform to the existing schema definitions.
+
