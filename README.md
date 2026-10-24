@@ -1,12 +1,12 @@
 # Recursive Reasoning or Statistical Extrapolation? In-Context Learning in Multi-Agent Interdependent Decision-Making
 
-[![Conference](https://img.shields.io/badge/EMNLP%202026-Findings-blue.svg?style=flat)](#)
+[![Conference](https://img.shields.io/badge/EMNLP%202026-Findings-blue.svg?style=flat)](https://aclanthology.org/2026.findings-emnlp.1680/)
 [![arXiv](https://img.shields.io/badge/ArXiv-2609.18591-b31b1b.svg?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2609.18591)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github)](https://github.com/yuliu625/In-Context-Learning-in-Multi-Agent-Interdependent-Decision-Making)
 [![License](https://img.shields.io/github/license/yuliu625/In-Context-Learning-in-Multi-Agent-Interdependent-Decision-Making?style=flat&label=LICENSE)](LICENSE)
 [![CI](https://img.shields.io/github/actions/workflow/status/yuliu625/In-Context-Learning-in-Multi-Agent-Interdependent-Decision-Making/ci.yaml?branch=main&style=flat)](https://github.com/yuliu625/In-Context-Learning-in-Multi-Agent-Interdependent-Decision-Making/actions/workflows/ci.yaml)
 
-Accepted to **Findings of EMNLP 2026** (to appear). 
+Accepted to **Findings of EMNLP 2026**. 
 
 
 ## 📖 Abstract
